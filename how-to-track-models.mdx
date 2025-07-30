@@ -1,0 +1,43 @@
+---
+title: "How to Track Models"
+description: "Learn how to Track your Revit models in Kinship to unlock project insights and analytics."
+---
+
+
+# How-To Guide: Tracking a Revit Model in Kinship
+
+Want to start tracking your Revit model with Kinship?  
+Follow these steps to make sure your model, its content, and all project data stay up-to-date and accessible for your team.
+
+## Quick Steps
+
+1. **Synchronize with Central (SwC) in Revit**
+    - If your model isn’t tracked yet, Kinship will prompt you:
+        - **Track:** Adds the model for tracking.
+        - **Do not track:** Kinship won’t prompt you again for this model.  
+          _Tip: You can add it manually later—see step 4 below._
+2. **Kinship captures and uploads content**
+    - System and component families are uploaded automatically.
+    - _Note: Groups, views, and sheets need manual upload._
+3. **Model is assigned to a project**
+    - Public models join an existing project or remain unassigned.
+    - Restricted models create a new restricted project.
+4. **Check sync status in Revit**
+    - Click **Model Sync Status** on the Kinship ribbon to view the current sync state.
+    - Sync outstanding changes manually or let Kinship sync when Revit is idle.
+5. **View and analyze in Kinship web portal**
+    - See sync history, model details, Revit version, warnings, and more.
+    - Access crash logs, journals, and track content across projects and teams.
+
+---
+
+## Notes & Troubleshooting
+
+- **Local files aren’t tracked by default**  
+  Kinship skips models saved to local drives (like `C:\`). To override, use **Model Sync Status** in the Kinship ribbon.
+- **Admin rules may affect tracking**  
+  Your admin can set rules to always/never add certain models based on their location. [Learn more about Model Sync Rules.](PLACEHOLDER_LINK)
+- **Model extraction setting**  
+  If “Disable family and model extraction” is checked in the add-in settings, Kinship will not prompt to track models.
+- **Want to track a model later?**  
+  Go to **Add-Ins** > Kinship panel > **Model Sync Status**. You’ll see the tracking dialog again.
