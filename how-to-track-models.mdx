@@ -1,33 +1,43 @@
 ---
 title: "How to Track Models"
-description: "Learn how to Track your Revit models in Kinship to unlock project insights and analytics."
+description: "Learn how to track your Revit models in Kinship to unlock project insights and analytics."
 ---
 
+## Before You Begin
 
-# How-To Guide: Tracking a Revit Model in Kinship
+For a model to be tracked in Kinship, it must be workshared.
 
-Want to start tracking your Revit model with Kinship?  
-Follow these steps to make sure your model, its content, and all project data stay up-to-date and accessible for your team.
+Kinship will prompt you to add a model when:
+- A workshared model is saved as a central file that isn’t already registered with Kinship.
+- You synchronize with central (SwC) to a central file that Kinship doesn’t know about yet. This often happens when the central file was created by someone without Kinship installed, or when the user who created the file chose not to add the model to Kinship at that time.
 
-## Quick Steps
 
-1. **Synchronize with Central (SwC) in Revit**
-    - If your model isn’t tracked yet, Kinship will prompt you:
-        - **Track:** Adds the model for tracking.
-        - **Do not track:** Kinship won’t prompt you again for this model.  
-          _Tip: You can add it manually later—see step 4 below._
-2. **Kinship captures and uploads content**
-    - System and component families are uploaded automatically.
-    - _Note: Groups, views, and sheets need manual upload._
-3. **Model is assigned to a project**
+## When Will I Be Asked to Track a Model?
+
+- **After performing Synchronize with Central (SwC)** on a workshared model, Kinship will prompt you if the model isn’t already tracked.
+    - Choose **Track** to start tracking the model.
+    - Choose **Do not track** to skip tracking for this model (you won’t be prompted again).
+    - _Tip: If you choose not to track, you can still add the model later—see below._
+
+## If You’re Not Prompted
+
+If you are not prompted to track a model (for example, if Kinship wasn’t installed when the central file was created, or the model was previously skipped), you can add it manually:
+
+1. Open Revit and go to the **Add-Ins** tab.
+2. In the Kinship panel, click **Model Sync Status**.
+3. Follow the prompt to add the model for tracking.
+
+## What Happens When a Model is Tracked?
+
+- **Kinship automatically captures and uploads** all component and system families, annotations and details, as well as filled regions and patterns from your model.
+    - _Note: Views, sheets, groups, and in-place families are not tracked._
+- The model is assigned to a project:
     - Public models join an existing project or remain unassigned.
     - Restricted models create a new restricted project.
-4. **Check sync status in Revit**
-    - Click **Model Sync Status** on the Kinship ribbon to view the current sync state.
-    - Sync outstanding changes manually or let Kinship sync when Revit is idle.
-5. **View and analyze in Kinship web portal**
-    - See sync history, model details, Revit version, warnings, and more.
-    - Access crash logs, journals, and track content across projects and teams.
+- You can check the sync status at any time using **Model Sync Status**.
+- Use the Kinship web portal to view:
+    - Sync history, model details, Revit version, warnings, and more.
+    - Crash logs, journals, and content usage across projects and teams.
 
 ---
 
@@ -39,5 +49,3 @@ Follow these steps to make sure your model, its content, and all project data st
   Your admin can set rules to always/never add certain models based on their location. [Learn more about Model Sync Rules.](PLACEHOLDER_LINK)
 - **Model extraction setting**  
   If “Disable family and model extraction” is checked in the add-in settings, Kinship will not prompt to track models.
-- **Want to track a model later?**  
-  Go to **Add-Ins** > Kinship panel > **Model Sync Status**. You’ll see the tracking dialog again.
