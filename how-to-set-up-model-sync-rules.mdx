@@ -12,6 +12,13 @@ Follow the steps below to access and update your team’s rules.
 2. Click your user icon in the top-right corner and select **Settings**.
 3. Scroll to the **Model Sync Rules** section.
 
+<img
+  className="block"
+  src="/images/model-sync-rules-4 rules.png"
+  alt="Viewing Model Sync Rules"
+/>
+
+
 ---
 
 ## Creating a New Rule
@@ -19,50 +26,85 @@ Follow the steps below to access and update your team’s rules.
 1. Click **Add Rule**.
 2. In the dialog, enter a **path** or **filename pattern** (e.g., `*\eTransmit\*` or `*secret*`).
 3. Choose the desired **action**:
-    | Action           | What it does                                                                                 |
-    |:-----------------|:---------------------------------------------------------------------------------------------|
-    | **Never**        | Never add matching models to Kinship. Users aren’t prompted. Only admins can override.       |
-    | **Auto Restricted** | Automatically add matching models as **restricted**.                                      |
-    | **Auto Public**  | Automatically add matching models as **public** (assigned to a project or left unassigned).  |
-    | **Ask User**     | Show the default Kinship prompt (user decides, can set privacy).                             |
+    | Action              | What it does                                                                                |
+    | :------------------ | :------------------------------------------------------------------------------------------ |
+    | **Never**           | Never add matching models to Kinship. Users aren’t prompted. Only admins can override.      |
+    | **Auto Restricted** | Automatically add matching models as **restricted**.                                        |
+    | **Auto Public**     | Automatically add matching models as **public** (assigned to a project or left unassigned). |
+    | **Ask User**        | Show the default Kinship prompt (user decides, can set privacy).                            |
 4. Click **Add** to save the rule.
 
-
-
-> **Tip:** Patterns must match either a path or a filename, but not both. See the [overview](model-sync-rules) for pattern examples.
+<img
+  className="block"
+  src="/images/model-sync-rules-add-rule-actions.png"
+  alt="Creating a New Rule"
+/>
 
 ---
 
 ## Editing a Rule
 
 1. Find the rule you want to change in the rules list.
-2. Click the **edit (blue pencil)** button for that rule.
+2. Click the that rule to display the edit dialog.
 3. Update the pattern and/or action.
 4. Click **Save**.
 
----
-
-## Reordering Rules
-
-- Click the **Edit Rules** button to enter editing mode.
-- Use the **drag handle** (≡) on the left of each rule to move it up or down.
-- Click **Done** to save the new order.
-
-> **Note:** Rules are processed top to bottom; only the first matching rule applies.
+<img
+  className="block"
+  src="/images/model-sync-rules-edit-rule-entered.png"
+  alt="Editing a Rule"
+/>
 
 ---
 
 ## Deleting a Rule
 
-1. Enter **editing mode** by clicking the **Edit Rules** button.
-2. Click the **red minus (–)** button next to the rule you wish to remove.
+1. Enter **editing mode** by clicking the **Edit** button.
+2. Click the **Delete** ⊖ button next to the rule you wish to remove.
 3. Click **Done** to confirm and exit editing mode.
 
+<img
+  className="block"
+  src="/images/model-sync-rules-edit-mode-1-rule.png"
+  alt="Deleting a Rule"
+/>
+
+
+---
+
+## Reordering Rules
+
+- Click the **Edit** button to enter editing mode.
+- Use the **drag handle** ≡ on the right of each rule to move it up or down.
+- Click **Done** to save the new order.
+
+> **Note:** Rules are processed top to bottom; only the first matching rule applies.
+
+<Frame
+  caption="With this order, all models in the BIM folder—including those in the ‘private’ subfolder—will be added automatically. This means private models won’t get the intended restricted handling.">
+    <img
+        className="block"
+        src="/images/model-sync-rules-reorder-bad-order.png"
+        alt="Rules needing reordering"
+    />
+</Frame>
+
+<br></br>
+
+<Frame
+  caption="By placing the rule for the ‘private’ subfolder above the general BIM folder rule, private models are correctly set to ‘restricted’ before the broader rule is applied to other models.">
+    <img
+        className="block"
+        src="/images/model-sync-rules-reorder-good-order.png"
+        alt="Reordered rules"
+    />
+</Frame>
 ---
 
 ## Finishing Up
 
 Your Model Sync Rules will now apply automatically to **new models** as they are tracked in Kinship.
-**Note:** These rules only affect models that are added after the rules are set up—existing models already tracked in Kinship will not be changed.
+
+> **Note:** These rules only affect models that are added after the rules are set up—existing models already tracked in Kinship will not be changed.
 
 Remember: the **order of rules matters**—review your list to make sure it reflects your team’s needs.
