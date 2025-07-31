@@ -1,0 +1,88 @@
+---
+title: "How to Prevent Models from Being Tracked Automatically"
+description: "This quick guide shows administrators how to use Model Sync Rules to block automatic model tracking in Kinship"
+---
+
+You can prevent models from being tracked in Kinship by setting a Model Sync Rule to **Never**.
+This guide shows how to block automatic tracking for specific models, folders, or all new models.
+
+---
+
+## Blocking Models with a “Never” Rule
+
+1. **Go to Settings**
+   Log in to Kinship and open **Settings** from your user menu.
+2. **Open Model Sync Rules**
+   Scroll to the **Model Sync Rules** section.
+3. **Add a new rule**
+   - Click **Add Rule**.
+   - In the pattern field, enter the path or filename you want to block (e.g., `*\etransmit\*` or `*confidential*`).
+   - Select **Never** as the action.
+   - Click **Add** to save the rule.
+
+
+<img
+  className="block"
+  src="/images/model-sync-rules-add-rule-entered.png"
+  alt="alt"
+/>
+
+> **Tip:**
+> Only administrators can override “Never” rules and add blocked models manually.
+
+---
+
+## Blocking All New Models by Default
+
+You can use a catch-all rule with pattern `*` and action **Never** to control when models are tracked.
+Where you place this rule in your list changes its effect:
+
+---
+
+### Block All Except Allowed Folders
+
+To prevent all new models from being tracked **except those you explicitly allow**:
+
+1. Add a rule with the folder(s) you want to allow (e.g., `*\ActiveProjects\*`), set to **Auto Public** (or your preferred action).
+2. Add a rule with pattern `*` and action **Never**.
+3. Move the “Never” rule to the **bottom** of your rule list.
+
+
+<Frame
+  caption="With this setup, models will only be tracked if they match an allowed folder. All others are blocked.">
+    <img
+        className="block"
+        src="/images/model-sync-rules-block-all-models-except-allowed.png"
+        alt="Block All Except Allowed Folders"
+    />
+</Frame>
+
+---
+
+### Block All Model Tracking
+
+If you need to **block all new model tracking immediately**:
+
+1. Add a rule with pattern `*` and action **Never**.
+2. Move this rule to the **top** of your rule list.
+
+<Frame
+  caption="With this rule at the top, all model tracking is blocked, regardless of any other rules below.">
+    <img
+        className="block"
+        src="/images/model-sync-rules-block-all-models.png"
+        alt="Block All Model Tracking"
+    />
+</Frame>
+
+> You don’t need to delete or change your existing rules—just move or remove the catch-all rule when you’re ready to resume normal tracking.
+
+**Note:** Administrators can still add models manually using the Model Sync Status menu in the add-in.
+
+## What Happens Next?
+
+- Kinship will now ignore any models matching your “Never” rules.
+- Blocked models will not show a prompt for users to add them.
+- Admins can still override this using the Model Sync Status menu in the add-in.
+
+---
