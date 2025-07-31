@@ -1,6 +1,78 @@
 ---
-title: "Model Sync Rules"
-description: "Learn how to ...."
+title: "Automate Model Tracking with Model Sync Rules"
+description: "Learn how Model Sync Rules enable you to automate, standardize, and manage how new Revit models are tracked in Kinship—without manual prompts for every model."
 ---
 
+## What are Model Sync Rules?
 
+**Model Sync Rules** let you automate how Kinship handles new or updated central Revit models, based on the file’s location or name.
+Instead of prompting users every time a new model is detected, you can create rules that decide what happens—automatically, every time.
+
+---
+
+## Why use Sync Rules?
+
+- **Reduce manual work:** Avoid repeated prompts to add models.
+- **Consistent project setup:** Ensure models are tracked the right way, every time.
+- **Protect sensitive projects:** Prevent tracking of confidential or internal models.
+- **Easy overrides for admins:** Administrators can always add models manually if needed.
+
+---
+
+## What actions can rules take?
+
+Each rule matches a **path** or **filename pattern**, and assigns one of four actions:
+
+| Action           | What it does                                                                                 |
+|:-----------------|:---------------------------------------------------------------------------------------------|
+| **Never**        | Never add matching models to Kinship. Users aren’t prompted. Only admins can override.       |
+| **Auto Restricted** | Automatically add matching models as **restricted** (new restricted project).                      |
+| **Auto Public**  | Automatically add matching models as **public** (assigned to a project or left unassigned).  |
+| **Ask User**     | Show the default Kinship prompt (user decides, can set privacy).                             |
+
+---
+
+## How do rules work?
+
+- **First-match wins:** Rules are checked from top to bottom. Only the *first* matching rule applies to each model.
+- **Order matters:** You can drag and reorder rules to set their priority.
+- **Delete or edit anytime:** Manage your list to match changing needs.
+
+> **Note:**
+> Kinship ignores central models on local drives (e.g. `C:\`) by default, assuming they’re not shared. Admins can add these models explicitly from the Model Sync Status menu in Revit.
+
+---
+
+## Rule Patterns
+
+Rules use *simple matching* against **UNC paths or filenames** (not mapped drives).
+A rule can match by path *or* filename, but not both at the same time.
+
+**Examples:**
+- `*secret*`
+  Matches any filename or path containing “secret”.
+- `*\eTransmit\*`
+  Matches any model in any “eTransmit” folder or sub-folder.
+- `\\SRV-LON\*`
+  Matches any model stored on the server `SRV-LON`.
+
+**Invalid:**
+- `\\SRV-LON\*secret`
+  Mixing path and filename in one rule won’t work.
+
+---
+
+## What if no rules match?
+
+If no sync rule matches a model:
+- Kinship will use its default behaviour: **Ask User** (prompt appears).
+- To override this, add a final “catch-all” rule with pattern `*`.
+  You can set to **Never** if you want to only allow listed models.
+
+---
+
+## Admin override
+
+Even when a rule blocks tracking (`Never`), **administrators** can always add a model using the Model Sync Status panel in the Kinship Revit add-in.
+
+---
