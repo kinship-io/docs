@@ -1,5 +1,66 @@
 ---
-title: "..."
-description: "..."
+title: "How to Set Up Model Sync Rules"
+description: "This guide shows how the Administrators can set up and manage Model Sync Rules to automate model tracking for your team. You’ll learn how to create, edit, reorder, and delete rules to match your requirements."
 ---
 
+Model Sync Rules are managed from the Settings area in Kinship.
+Follow the steps below to access and update your team’s rules.
+
+## Viewing Model Sync Rules
+
+1. **Log in** to Kinship on the web.
+2. Click your user icon in the top-right corner and select **Settings**.
+3. Scroll to the **Model Sync Rules** section.
+
+---
+
+## Creating a New Rule
+
+1. Click **Add Rule**.
+2. In the dialog, enter a **path** or **filename pattern** (e.g., `*\eTransmit\*` or `*secret*`).
+3. Choose the desired **action**:
+    | Action           | What it does                                                                                 |
+    |:-----------------|:---------------------------------------------------------------------------------------------|
+    | **Never**        | Never add matching models to Kinship. Users aren’t prompted. Only admins can override.       |
+    | **Auto Restricted** | Automatically add matching models as **restricted** (new restricted project).                      |
+    | **Auto Public**  | Automatically add matching models as **public** (assigned to a project or left unassigned).  |
+    | **Ask User**     | Show the default Kinship prompt (user decides, can set privacy).                             |
+4. Click **Add** to save the rule.
+
+
+
+> **Tip:** Patterns must match either a path or a filename, but not both. See the [overview](model-sync-rules) for pattern examples.
+
+---
+
+## Editing a Rule
+
+1. Find the rule you want to change in the rules list.
+2. Click the **edit (blue pencil)** button for that rule.
+3. Update the pattern and/or action.
+4. Click **Save**.
+
+---
+
+## Reordering Rules
+
+- Click the **Edit Rules** button to enter editing mode.
+- Use the **drag handle** (≡) on the left of each rule to move it up or down.
+- Click **Done** to save the new order.
+
+> **Note:** Rules are processed top to bottom; only the first matching rule applies.
+
+---
+
+## Deleting a Rule
+
+1. Enter **editing mode** by clicking the **Edit Rules** button.
+2. Click the **red minus (–)** button next to the rule you wish to remove.
+3. Click **Done** to confirm and exit editing mode.
+
+---
+
+## Finishing Up
+
+Your Model Sync Rules will now apply automatically as models are tracked in Kinship.
+Remember: the **order of rules matters**—review your list to make sure it reflects your team’s needs.
