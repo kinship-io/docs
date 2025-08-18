@@ -17,15 +17,16 @@
             "group": "Get Started",
             "pages": [
               "index",
-              "create-a-new-team",
+              "how-to-create-a-new-team",
               "add-content-to-kinship",
               "track-models-with-kinship",
               "how-to-track-models",
               "model-sync-rules",
               "how-to-set-up-model-sync-rules",
               "how-to-set-up-model-sync-rules-to-prevent-models-from-being-tracked",
-              "models-and-projects"
-
+              "models-and-projects",
+              "users-and-team",
+              "user-roles"
             ]
           },
           {
