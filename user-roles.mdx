@@ -63,16 +63,22 @@ This is the default role for most users in your team.
 
 ## Permissions Tables
 
-<Note>The Administrator permissions shown below apply when Security Administrators are enabled.  
-If your team does not use Security Administrators, Administrators will have the same permissions as Security Administrators.</Note>
+<Note>
+The tables below show permissions when Security Administrators are enabled.  
+If your team doesn't use this role, Administrators have the same permissions as Sec Admins.
+</Note>
+
 
 ### Projects
 
-All users can view projects and open models within them.  
-Restricted projects are only visible to Security Administrators and project team members.  
-A user becomes part of a project team when they perform a Sync with Central (SwC) with one of the project models.
+All users can view projects and open models.
 
-<Note>When Security Administrators are enabled, Administrators can’t access restricted projects unless they’re part of the project team.</Note>
+Restricted projects are only visible to Sec Admins and users who are part of the project team.  
+A user is added to a project team automatically when they perform a Sync with Central (SwC) on one of its models.
+
+<Warning>
+If Security Administrators are enabled, Administrators can't access restricted projects unless they’re part of the project team.
+</Warning>
 
 
 | Project Activity                     | Team Member | Content Manager |     Admin     |        Sec Admin       |
@@ -99,12 +105,15 @@ A user becomes part of a project team when they perform a Sync with Central (SwC
 
 ### Content
 
-All users can search, view, and load content from the Library and non-restricted Team Collections. Content Managers have the ability to manage the Library and Team Collections, making the role ideal for users responsible for curating and managing content for the team.
+All users can search, view, and load content from the Library and from non-restricted Team Collections.
+
+Content Managers can manage the Library and Team Collections. This includes editing content, organizing lists, and sharing collections. Use this role for users who curate and maintain your team’s content.
 
 #### Library
 
-- All members have the ability to view and load content from the Library and Team Collections.
-- Team Members can suggest content for the library by adding their own content. However, to maintain quality and relevance, any content added by Team Members goes into a *“Pending Approval”* section. This content must be reviewed and approved by a user with the appropriate permissions (such as an Administrator or Content Manager) before it becomes accessible to the rest of the team.
+- All users can view and load content from the Library and Team Collections.
+- Team Members can suggest content for the Library. Suggestions appear in the *Pending Approval* section and must be approved by a Content Manager or Administrator before they become visible to the team.
+
 
 
 | Library Activity                          | Team Member | Content Manager |     Admin     |     Sec Admin     |
@@ -118,14 +127,21 @@ All users can search, view, and load content from the Library and non-restricted
 
 #### Team Collections
 
-- All members can view and load content from Team Collections. However, restricted Team Collections are only visible to Administrators and users who have been given access either by sharing the collection with them or by assigning the collection to a project they are part of. (A user becomes part of a project team when they perform a Sync with Central (SwC) with a project model.)
+- All members can view and load content from Team Collections. Restricted Team Collections are only visible to Security Administrators, and users who have been granted access, either by sharing the collection with them or by assigning it to a project they are part of. A user joins a project team automatically when they perform a Sync with Central (SwC) on one of its models.
 - Content Managers can view and edit non-restricted Team Collections.
-- Regular Team Members can create and manage Personal Collections, but cannot convert those to Team Collections.
+- Team Members can create and manage their own Personal Collections but can’t convert them into Team Collections.
 
-<Note>When Security Administrators are enabled, Administrators can no longer access restricted collections (unless it is shared with them or they are part of a project to which that restricted collection is assigned.)</Note>
+<Warning>
+When Security Administrators are enabled, Administrators can’t access restricted collections unless the collection is shared with them or assigned to a project they are part of.
+</Warning>
 
-<Tip>Viewing and editing access can be granted to specific users by sharing the collection with them.</Tip>
-<Tip>In the settings of a specific collection, you can enable a feature that allows all team members to add and modify its content. This will allow all user roles (including regular members) to contribute without the need to share the collection with all team members individually. This setting will only affect that specific collection.</Tip>
+<Tip>
+You can grant view and edit access to specific users by sharing a collection with them.
+</Tip>
+
+<Tip>
+In a collection’s settings, you can allow all team members to add and modify content. This lets everyone contribute without needing to share the collection individually. The setting applies only to that specific collection.
+</Tip>
 
 
 | Team Collection Activity                  | Team Member | Content Manager |     Admin     |     Sec Admin     |
@@ -142,9 +158,12 @@ All users can search, view, and load content from the Library and non-restricted
 
 #### Personal Collections
 
-Personal Collections are individual to each user and, as such, each member can manage and share their own Personal Collections.
+Personal Collections belong to individual users. Each member can create, manage, and share their own Personal Collections.
 
-<Note>A Personal Collection (unless shared) is only accessible to the team member that created it.</Note>
+<Warning>
+A Personal Collection is only visible to the member who created it, unless it is shared.
+</Warning>
+
 
 
 | Personal Collection Activity              | Team Member | Content Manager |     Admin     |     Sec Admin     |
@@ -159,16 +178,18 @@ Personal Collections are individual to each user and, as such, each member can m
 
 ### Team
 
-Team and team member management is the domain of Administrators. They are able to invite new members, change team member roles, reset passwords, and manage team settings.
-
+Administrators manage your team and its members. They can invite new users, change roles, reset passwords, and adjust team settings.
 
 #### Members
 
-While all members can see other members in the team, only Administrators (and Security Administrators if enabled) can manage other team members’ accounts.
+<Tip>
+By default but only Administrators can view other members’ accounts. You can allow Team Members and Content Managers to view the Team section and other users' profiles in Settings
+</Tip>
+
 
 | Members Section Activity                  | Team Member | Content Manager |     Admin     |     Sec Admin     |
 |:------------------------------------------|:-----------:|:---------------:|:-------------:|:-----------------:|
-| View members                              |     ✔       |        ✔        |      ✔        |        ✔          |
+| View members                              |             |                 |      ✔        |        ✔          |
 | Invite new members                        |             |                 |      ✔        |        ✔          |
 | Reset other member's password             |             |                 |      ✔        |        ✔          |
 | Deactivate and reactivate members         |             |                 |      ✔        |        ✔          |
@@ -179,7 +200,6 @@ While all members can see other members in the team, only Administrators (and Se
 
 Only Administrators can view and manage team settings.
 
-<Note>When Security Administrators are enabled, regular Administrators can no longer edit team settings (except for the Thumbnail extraction setting).</Note>
 
 | Administrative Activity                   | Team Member | Content Manager |     Admin     |     Sec Admin     |
 |:------------------------------------------|:-----------:|:---------------:|:-------------:|:-----------------:|
