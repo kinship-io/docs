@@ -1,0 +1,80 @@
+---
+title: "How to set up SCIM user provisioning with Microsoft Entra ID"
+description: "Learn how to set up the SCIM (System for Cross-domain Identity Management) which enables automatic synchronisation of users and groups between Microsoft Entra ID and Kinship. "
+---
+
+SCIM (System for Cross-domain Identity Management) lets you automatically sync users and groups between Microsoft Entra ID and Kinship. Once set up, user management becomes seamless—no more manual updates.
+
+<Note>
+Before you start make sure you’ve already generated the SCIM token in for your Kinship team. See how to [obtain your SCIM Token](#)
+</Note>
+
+---
+
+## Steps to set up user provisioning.
+
+### 1. Create an Enterprise Application in Entra ID
+
+1. Sign in to the [Microsoft Entra admin center](#).
+2. Go to **Identity > Applications > Enterprise applications**.
+3. Select **+ New application**.
+4. Choose **Create your own application**.
+5. Enter a name (for example, *Kinship Provisioning*).
+6. Select **Integrate any other application you don’t find in the gallery (Non-gallery)**.
+7. Click **Create**.
+
+📸 *[Insert screenshot of Enterprise application creation]*
+
+
+### 2. Configure SCIM Provisioning
+
+1. In your new Enterprise Application, go to **Provisioning** in the left menu.
+2. Under **Provisioning Mode**, select **Automatic**.
+3. Under **Admin Credentials**:
+   - Enter your **Kinship Tenant URL** in the *Tenant URL* field.  
+     👉 [How to find your Tenant URL](#)  
+   - Enter your **SCIM token** in the *Secret Token* field.
+4. Click **Test Connection** to verify.
+
+📸 *[Insert screenshot of provisioning setup]*
+
+
+### 3. Enable User and Group Provisioning
+
+1. Once the connection is successful, click **Save**.
+2. Under **Mappings**, make sure both options are enabled:
+   - *Provision Azure Active Directory Users*  
+   - *Provision Azure Active Directory Groups*
+3. Finally, set **Provisioning Status** to **On**.
+
+📸 *[Insert screenshot of provisioning status toggle]*
+
+That’s it—your users and groups in Entra ID will now stay in sync with Kinship automatically.
+
+---
+
+## Troubleshooting
+
+If something doesn’t work the first time, here are a few common things to check:
+
+- **Test Connection fails**  
+  - Double-check your Tenant URL. It should match exactly what you copied from Kinship.  
+  - Make sure your SCIM token hasn’t expired. If needed, [regenerate a token](#).
+
+- **Users aren’t syncing**  
+  - Confirm that *Provision Azure Active Directory Users* is enabled under **Mappings**.  
+  - Ensure the **Provisioning Status** toggle is set to **On**.
+
+- **Groups aren’t syncing**  
+  - Check that *Provision Azure Active Directory Groups* is enabled.  
+  - Verify that the groups you want to sync in Entra ID are assigned to the Kinship application.
+
+- **Changes take time**  
+  - Provisioning isn’t instant—Microsoft Entra ID runs provisioning on a scheduled cycle (usually every 40 minutes). Allow some time for changes to show up in Kinship.
+
+---
+
+## Next Steps
+
+- Review the guide on [Managing User Groups via SCIM](#).
+- If you need to regenerate your SCIM token, see [Obtain a SCIM Token](#).

@@ -26,7 +26,10 @@
               "how-to-set-up-model-sync-rules-to-prevent-models-from-being-tracked",
               "models-and-projects",
               "users-and-team",
-              "user-roles"
+              "user-roles",
+              "how-to-enable-sso",
+              "how-to-disable-sso",
+              "how-to-set-up-scim-provisioning"
             ]
           },
           {
